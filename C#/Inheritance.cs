@@ -11,7 +11,7 @@ class Animal  // Base class (parent)
 
 class Pig : Animal  // Derived class (child) 
 {
-  public void animalSound() 
+  public new void animalSound() 
   {
     Console.WriteLine("The pig says: wee wee");
   }
@@ -19,7 +19,7 @@ class Pig : Animal  // Derived class (child)
 
 class Dog : Animal  // Derived class (child) 
 {
-  public void animalSound() 
+  public new void animalSound() 
   {
     Console.WriteLine("The dog says: bow wow");
   }

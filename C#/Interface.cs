@@ -1,54 +1,61 @@
-/*
-C#에서 추상화를 달성하는 또 다른 방법은 인터페이스를 사용하는 것입니다.
-
-An interface은 완전히 " 추상 클래스 "이며 추상 메서드와 속성(빈 본문 포함)만 포함할 수 있습니다.
-
-인터페이스 시작 부분에 "I" 문자로 시작하는 것이 좋은 습관으로 간주됩니다. 
-이렇게 하면 자신과 다른 사람들이 인터페이스가 클래스가 아니라 인터페이스임을 쉽게 기억할 수 있기 때문입니다.
-*/
-using System;
-namespace mutiinterface;
-// Interface
-interface IAnimal 
+// interface에서는 생성자를 만들수 없다!!
+namespace Units_interface;
+interface IUnit //interface를 사용하는 경우에는 추상메서드와 속성만 포함할 수 있습니다.
 {
+    string Name {get; set;}
+    int Damage {get;}
+    int Defence {get;}
+
     
-  void animalSound(); // interface method (does not have a body)
-// interface는 멤버변수도 가질수 없다. ex)private string a = 'hi', public int a = 10
-
-/* interface는 아래와 같이 일반매서드를 가질 수 없다.
- public void sleep()
-  {
-    Console.WriteLine("Zzz");
-  }
-*/
+  
+    void moving(); //추상메서드
+    void stop();  //추상메서드
+   
 
 }
-interface IAnimal2
+
+class Fly : IUnit
 {
-    void myanimalSound();
-}
+    public string Name {get; set;}
+    public int Damage {get;}
+    public int Defence {get;}
+   
+    public Fly(string name, int damage, int defence)
+    {
+        Name = name;
+        Damage = damage;
+        Defence = defence;
+    }
+    public void moving() //interface를 사용할 경우 override를 사용할 필요가 없다.
+    {
+        Console.WriteLine("going ahead");
+    }
+    
+    public void stop()
+    {
+          Console.WriteLine("Stop");
+    }
+      
+    }
+  
 
-// Pig "implements" the IAnimal interface
-class Pig : IAnimal , IAnimal2 // 다중 인터페이스를 사용 할 경우 , 를 사용한다.
+
+class Interface
 {
-  public void animalSound() 
-  {
-    // The body of animalSound() is provided here
-    Console.WriteLine("The pig says: wee wee");
-  }
-  public void myanimalSound() 
-  {
-    Console.WriteLine("Some other text...");
-  }
-}
+    static void Mainclass(string[] args)
+    { Fly mainunit = new Fly("marin",10,20); 
+      IUnit mainunit1 = new Fly("Tank", 120, 100);
+      IUnit mainunit2 = new Fly("Medic", 0, 0);  
+      IUnit mainunit3 = new Fly("Shuttle",0,0); 
 
-class Interface 
-{
-  static void Maininterface(string[] args) 
-  {
-    Pig myPig = new Pig();  // Create a Pig object
-    myPig.animalSound();
-    myPig.myanimalSound();
-  }
+    Console.WriteLine("{0}유닛은 {1}공격력과 {2}방어력을 가집니다.",mainunit.Name, mainunit.Damage,mainunit.Defence);
+    mainunit.moving();
+    mainunit.stop();
+    Console.WriteLine("{0}유닛은 {1}공격력과 {2}방어력을 가집니다.",mainunit1.Name, mainunit1.Damage,mainunit1.Defence);
+    mainunit1.moving();
+    Console.WriteLine("{0}유닛은 {1}공격력과 {2}방어력을 가집니다.",mainunit2.Name, mainunit2.Damage,mainunit2.Defence);
+    mainunit2.moving();
+    Console.WriteLine("{0}유닛은 {1}공격력과 {2}방어력을 가집니다.",mainunit3.Name, mainunit3.Damage,mainunit3.Defence);
+    
+    }
 }
-

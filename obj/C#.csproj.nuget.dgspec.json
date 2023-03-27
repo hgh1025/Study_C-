@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\C#\\C#\\C#.csproj": {}
+    "C:\\C#\\C#.csproj": {}
   },
   "projects": {
-    "C:\\C#\\C#\\C#.csproj": {
+    "C:\\C#\\C#.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\C#\\C#\\C#.csproj",
+        "projectUniqueName": "C:\\C#\\C#.csproj",
         "projectName": "C#",
-        "projectPath": "C:\\C#\\C#\\C#.csproj",
+        "projectPath": "C:\\C#\\C#.csproj",
         "packagesPath": "C:\\Users\\gjwlg\\.nuget\\packages\\",
-        "outputPath": "C:\\C#\\C#\\obj\\",
+        "outputPath": "C:\\C#\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gjwlg\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -37,16 +37,6 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[7.0.4, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "target": "Package",
-              "version": "[7.0.4, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
